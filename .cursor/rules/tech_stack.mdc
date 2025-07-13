@@ -1,0 +1,16 @@
+---
+description: 使用する技術
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# 推奨技術スタック
+
+- フロントエンド：Flutter（Material 3対応）
+- 状態管理：Riverpod
+- バックエンド/クラウド：Firebase（認証・DB・ストレージ・通知）
+- 画像認識：Firebase ML Kit
+- アニメーション：Lottie
+- 通知：flutter_local_notifications、Firebase Cloud Messaging
+- CI/CD：CodemagicまたはGitHub Actions

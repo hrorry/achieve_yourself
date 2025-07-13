@@ -1,0 +1,24 @@
+---
+description:このルールに沿って、ディレクトリ構成やクラス設計を行うこと。
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# アーキテクチャ設計ルール（Flutter公式ガイド準拠）
+
+- アプリの設計はFlutter公式の[App architecture guide](https://docs.flutter.dev/app-architecture/guide)に沿って行う。
+- 基本構成は「MVVM＋Repositoryパターン」とする。
+
+## 各レイヤーの役割
+- **View（Widget）**：UI表示のみ担当。ロジックは持たず、ViewModelからデータを受け取る。
+- **ViewModel**：アプリの状態管理・ロジック担当。Repositoryからデータを取得し、UI用に加工してViewへ渡す。UIイベントのコマンドもここに持つ。
+- **Repository**：データの正規化・キャッシュ・エラーハンドリングなどを担当。Serviceからデータを取得し、ViewModelに渡す。
+- **Service**：APIやDBなど外部データソースとのやりとりのみ担当。
+- **UseCase（必要な場合のみ）**：複雑なビジネスロジックや複数Repositoryの合成が必要な場合に追加。
+
+## 推奨ポイント
+- UIはロジックを持たず、ViewModelに任せる
+- Repositoryでデータの正規化・キャッシュ・エラー処理をまとめる
+- ServiceはAPIやDBとのやりとりだけに集中
+- 必要ならUseCaseでロジックを分離

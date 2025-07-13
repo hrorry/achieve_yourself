@@ -1,0 +1,12 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+
+# githubの活用ルール
+## repository
+このプロジェクトのリポジトリは`hrorry/achieve_yourself`
+
+## issues
+開発タスクはgithubのissuesで管理する
